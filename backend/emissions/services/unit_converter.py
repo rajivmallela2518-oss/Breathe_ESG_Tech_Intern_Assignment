@@ -48,9 +48,12 @@ CONVERSION_TABLE = {
     ("gwh",    "electricity"): (Decimal("1000000"),    "kWh"),
 
     # -------- Travel distance → km --------
-    ("km",     "distance"): (Decimal("1"),     "km"),
+    ("km",     "distance"): (Decimal("1"),       "km"),
     ("miles",  "distance"): (Decimal("1.60934"), "km"),
     ("mi",     "distance"): (Decimal("1.60934"), "km"),
+
+    # -------- Hotel stays → room-nights (identity conversion) --------
+    ("room_night", "hotel"): (Decimal("1"), "room_night"),
 }
 
 # Activity types → conversion category
@@ -74,6 +77,7 @@ ACTIVITY_TO_CATEGORY = {
     "GROUND_TRANSPORT_TAXI":    "distance",
     "GROUND_TRANSPORT_RENTAL":  "distance",
     "GROUND_TRANSPORT_RAIL":    "distance",
+    "HOTEL_STAY":               "hotel",
 }
 
 

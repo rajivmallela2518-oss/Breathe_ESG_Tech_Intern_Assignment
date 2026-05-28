@@ -105,6 +105,15 @@ def classify_utility_row(canonical: dict) -> str:
     return "GRID_ELECTRICITY_UNKNOWN"
 
 
+def classify_travel_row(canonical: dict) -> str:
+    """
+    Travel rows carry their activity_type already resolved by TravelParser.
+    This function just returns it, allowing the normalization service to call
+    CLASSIFIER_MAP[source_type](canonical) uniformly across all three sources.
+    """
+    return canonical.get("activity_type", "FLIGHT_SHORT_HAUL")
+
+
 def get_scope(activity_type: str) -> int:
     entry = ACTIVITY_SCOPE_MAP.get(activity_type)
     if entry:

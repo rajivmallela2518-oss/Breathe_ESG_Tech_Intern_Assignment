@@ -1,0 +1,27 @@
+Report_ID,Employee_ID,Employee_Name,Department,Cost_Center,Expense_Type,Transaction_Date,Merchant_Name,Origin_City,Origin_Country,Destination_City,Destination_Country,Origin_IATA,Destination_IATA,Distance_km,Travel_Class,Hotel_Nights,Amount_Local,Currency,Notes
+RPT-2024-0441,EMP-0041,Sarah Mitchell,Operations,CC-UK-OPS,Air Travel,03/01/2024,British Airways,London,UK,New York,USA,LHR,JFK,,Economy,0,780.00,GBP,
+RPT-2024-0441,EMP-0041,Sarah Mitchell,Operations,CC-UK-OPS,Hotel,03/01/2024,Marriott Times Square,,,New York,USA,,,0,,4,1240.00,USD,4 nights NYC
+RPT-2024-0441,EMP-0041,Sarah Mitchell,Operations,CC-UK-OPS,Air Travel,07/01/2024,British Airways,New York,USA,London,UK,JFK,LHR,,Economy,0,810.00,GBP,Return leg
+RPT-2024-0442,EMP-0072,Ravi Sharma,Engineering,CC-IN-ENG,Air Travel,08/01/2024,IndiGo,Mumbai,India,Delhi,India,BOM,DEL,1148,Economy,0,4200.00,INR,Domestic India
+RPT-2024-0442,EMP-0072,Ravi Sharma,Engineering,CC-IN-ENG,Hotel,08/01/2024,Taj Palace Hotel,,,Delhi,India,,,0,,2,18500.00,INR,
+RPT-2024-0442,EMP-0072,Ravi Sharma,Engineering,CC-IN-ENG,Air Travel,10/01/2024,IndiGo,Delhi,India,Mumbai,India,DEL,BOM,1148,Economy,0,3900.00,INR,Return
+RPT-2024-0443,EMP-0033,James Okafor,Sales,CC-UK-SALES,Air Travel,10/01/2024,Lufthansa,London,UK,Frankfurt,Germany,LHR,FRA,,Business,0,1850.00,GBP,Short-haul business class
+RPT-2024-0443,EMP-0033,James Okafor,Sales,CC-UK-SALES,Hotel,10/01/2024,Marriott Frankfurt,,,Frankfurt,Germany,,,0,,1,290.00,EUR,
+RPT-2024-0443,EMP-0033,James Okafor,Sales,CC-UK-SALES,Taxi,10/01/2024,Taxi Frankfurt,,,,Germany,,,45,N/A,0,65.00,EUR,Airport to hotel ~45km
+RPT-2024-0443,EMP-0033,James Okafor,Sales,CC-UK-SALES,Air Travel,11/01/2024,Lufthansa,Frankfurt,Germany,London,UK,FRA,LHR,,Business,0,1920.00,GBP,Return
+RPT-2024-0444,,Anna Kowalski,Finance,CC-DE-FIN,Air Travel,12/01/2024,KLM,Hamburg,Germany,Amsterdam,Netherlands,HAM,AMS,,Economy,0,245.00,EUR,Missing employee ID
+RPT-2024-0444,,Anna Kowalski,Finance,CC-DE-FIN,Rail,12/01/2024,Eurostar,Amsterdam,Netherlands,London,UK,,,499,Economy,0,180.00,EUR,Eurostar distance 499km
+RPT-2024-0445,EMP-0088,Priya Nair,HR,CC-IN-HR,Air Travel,15/01/2024,Emirates,Mumbai,India,Dubai,UAE,BOM,DXB,,Economy,0,22000.00,INR,Short-haul international
+RPT-2024-0445,EMP-0088,Priya Nair,HR,CC-IN-HR,Hotel,15/01/2024,Hilton Dubai,,,Dubai,UAE,,,0,,2,850.00,USD,
+RPT-2024-0445,EMP-0088,Priya Nair,HR,CC-IN-HR,Air Travel,17/01/2024,Emirates,Dubai,UAE,Mumbai,India,DXB,BOM,,Economy,0,21500.00,INR,Return
+RPT-2024-0446,EMP-0041,Sarah Mitchell,Operations,CC-UK-OPS,Air Travel,20/01/2024,British Airways,London,UK,Singapore,Singapore,LHR,SIN,,Business,0,3200.00,GBP,Long-haul business class
+RPT-2024-0446,EMP-0041,Sarah Mitchell,Operations,CC-UK-OPS,Hotel,20/01/2024,Marina Bay Sands,,,Singapore,Singapore,,,0,,3,1800.00,SGD,
+RPT-2024-0446,EMP-0041,Sarah Mitchell,Operations,CC-UK-OPS,Car Rental,20/01/2024,Hertz Singapore,,,Singapore,Singapore,,,0,N/A,3,420.00,SGD,3-day rental no distance recorded
+RPT-2024-0446,EMP-0041,Sarah Mitchell,Operations,CC-UK-OPS,Air Travel,23/01/2024,British Airways,Singapore,Singapore,London,UK,SIN,LHR,,Business,0,3400.00,GBP,Return long-haul
+RPT-2024-0447,EMP-0099,Thomas Braun,Engineering,CC-DE-ENG,Air Travel,22/01/2024,Lufthansa,Munich,Germany,New York,USA,MUC,JFK,,Economy,0,1100.00,EUR,
+RPT-2024-0447,EMP-0099,Thomas Braun,Engineering,CC-DE-ENG,Hotel,22/01/2024,Hotel New York,,,,,,,,0,,5,,USD,Hotel with no amount - expensed separately
+RPT-2024-0447,EMP-0099,Thomas Braun,Engineering,CC-DE-ENG,Air Travel,27/01/2024,Lufthansa,New York,USA,Munich,Germany,JFK,MUC,,Economy,0,1150.00,EUR,Return
+RPT-2024-0441,EMP-0041,Sarah Mitchell,Operations,CC-UK-OPS,Air Travel,03/01/2024,British Airways,London,UK,New York,USA,LHR,JFK,,Economy,0,780.00,GBP,DUPLICATE of first row
+RPT-2024-0448,EMP-0055,Liu Wei,Sales,CC-APAC-SALES,Air Travel,25/01/2024,Cathay Pacific,Hong Kong,China,London,UK,HKG,LHR,,First,0,8500.00,USD,First class long-haul
+RPT-2024-0449,EMP-0022,Deepak Menon,Operations,CC-IN-OPS,Air Travel,28/01/2024,Air India,Mumbai,India,London,UK,BOM,LHR,,Economy,0,65000.00,INR,
+RPT-2024-0449,EMP-0022,Deepak Menon,Operations,CC-IN-OPS,Taxi,28/01/2024,Uber London,,,,UK,,,0,N/A,0,42.50,GBP,Heathrow to office no distance
