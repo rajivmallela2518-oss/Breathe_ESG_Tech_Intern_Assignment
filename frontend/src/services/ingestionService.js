@@ -24,3 +24,13 @@ export async function getDashboardSummary() {
   const { data } = await api.get("/ingestion/summary/");
   return data;
 }
+
+export async function getBatchRows(batchId, params = {}) {
+  const { data } = await api.get(`/ingestion/batches/${batchId}/rows/`, { params });
+  return data;
+}
+
+export async function getSuspiciousRows(params = {}) {
+  const { data } = await api.get("/ingestion/suspicious/", { params });
+  return data;
+}

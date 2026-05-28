@@ -10,8 +10,8 @@ export default function LoginPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await login(email, password);
-    navigate("/dashboard");
+    const ok = await login(email, password);
+    if (ok) navigate("/dashboard");
   }
 
   return (

@@ -1,8 +1,10 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useUpload } from "../hooks/useUpload";
 import { SOURCE_TYPES } from "../utils/constants";
 
 export default function UploadPage() {
+  const navigate = useNavigate();
   const { upload, status, result, error, reset } = useUpload();
   const [sourceType, setSourceType] = useState(SOURCE_TYPES[0].value);
   const [file, setFile] = useState(null);
@@ -23,23 +25,47 @@ export default function UploadPage() {
   }
 
   if (status === "success") {
+    const hasFlags = result.flagged_rows > 0 || result.failed_rows > 0;
     return (
       <div className="max-w-lg space-y-4">
         <div className="bg-green-50 border border-green-200 rounded-lg p-5">
-          <p className="font-medium text-green-800">Upload complete</p>
-          <div className="mt-2 text-sm text-green-700 space-y-1">
-            <p>Total rows: <strong>{result.total_rows}</strong></p>
-            <p>Valid: <strong>{result.valid_rows}</strong></p>
-            <p>Flagged for review: <strong>{result.flagged_rows}</strong></p>
-            <p>Failed to parse: <strong>{result.failed_rows}</strong></p>
+          <p className="font-medium text-green-800 mb-3">Upload complete</p>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm">
+            <span className="text-green-700">Total rows</span>
+            <span className="font-semibold text-green-900">{result.total_rows}</span>
+            <span className="text-green-700">Valid</span>
+            <span className="font-semibold text-green-900">{result.valid_rows}</span>
+            <span className="text-green-700">Flagged for review</span>
+            <span className={`font-semibold ${result.flagged_rows > 0 ? "text-yellow-700" : "text-green-900"}`}>
+              {result.flagged_rows}
+            </span>
+            <span className="text-green-700">Failed to parse</span>
+            <span className={`font-semibold ${result.failed_rows > 0 ? "text-red-700" : "text-green-900"}`}>
+              {result.failed_rows}
+            </span>
           </div>
         </div>
-        <button
-          onClick={reset}
-          className="text-sm text-brand-600 hover:underline"
-        >
-          Upload another file
-        </button>
+
+        {hasFlags && (
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-3 text-sm text-yellow-800">
+            {result.flagged_rows} row{result.flagged_rows !== 1 ? "s" : ""} need analyst review before they can be approved.
+          </div>
+        )}
+
+        <div className="flex gap-4 pt-1">
+          <button
+            onClick={() => navigate("/review")}
+            className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-4 py-2 rounded transition-colors"
+          >
+            Go to review queue →
+          </button>
+          <button
+            onClick={reset}
+            className="text-sm text-gray-500 hover:text-gray-800 transition-colors"
+          >
+            Upload another file
+          </button>
+        </div>
       </div>
     );
   }
