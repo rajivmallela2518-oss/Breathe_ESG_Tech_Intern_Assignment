@@ -3,7 +3,7 @@ services:
     name: breathe-esg-backend
     runtime: python
     rootDir: backend
-    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py loaddata emissions/fixtures/emission_factors.json && python manage.py create_demo_data
+    buildCommand: pip install -r requirements.txt && python manage.py makemigrations && python manage.py migrate && python manage.py loaddata emissions/fixtures/emission_factors.json && python manage.py create_demo_data
     startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: DJANGO_SETTINGS_MODULE
