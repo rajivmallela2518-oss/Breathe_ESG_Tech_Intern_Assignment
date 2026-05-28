@@ -10,8 +10,8 @@ Built as the Breathe ESG Tech Intern Assignment.
 
 | Service | URL |
 |---------|-----|
-| Frontend | https://breathe-esg-frontend.vercel.app |
-| Backend API | https://breathe-esg-backend.onrender.com/api/v1/ |
+| Frontend | https://breathe-esg-tech-intern-assignment-ashen.vercel.app |
+| Backend API | https://breathe-esg-tech-intern-assignment-59eu.onrender.com/api/v1/ |
 
 ---
 
