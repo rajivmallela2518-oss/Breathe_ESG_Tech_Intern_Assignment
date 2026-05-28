@@ -90,6 +90,36 @@ class BatchRowsView(TenantQuerySetMixin, ListAPIView):
         return qs
 
 
+class SuspiciousRowsView(APIView):
+    """
+    GET /api/v1/ingestion/suspicious/
+
+    Returns all FLAGGED rows across the tenant with their ERROR/WARNING flags
+    embedded. Supports optional ?source_type= and ?severity= filters.
+    Used by the analyst dashboard to surface rows that need attention.
+    """
+
+    def get(self, request):
+        tenant = request.tenant
+        severity = request.query_params.get("severity", "").upper()
+        source_type = request.query_params.get("source_type", "").upper()
+
+        rows_qs = (
+            RawRow.objects
+            .filter(tenant=tenant, status="FLAGGED")
+            .prefetch_related("flags", "batch")
+            .order_by("-created_at")
+        )
+        if source_type:
+            rows_qs = rows_qs.filter(source_type=source_type)
+
+        if severity in ("ERROR", "WARNING", "INFO"):
+            rows_qs = rows_qs.filter(flags__severity=severity).distinct()
+
+        serializer = RawRowSerializer(rows_qs, many=True)
+        return Response(serializer.data)
+
+
 class DashboardSummaryView(APIView):
     """
     GET /api/v1/ingestion/summary/

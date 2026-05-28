@@ -4,6 +4,7 @@ from .views import (
     BatchListView,
     BatchDetailView,
     BatchRowsView,
+    SuspiciousRowsView,
     DashboardSummaryView,
 )
 
@@ -12,5 +13,6 @@ urlpatterns = [
     path("batches/",                      BatchListView.as_view(),        name="batch-list"),
     path("batches/<uuid:pk>/",            BatchDetailView.as_view(),      name="batch-detail"),
     path("batches/<uuid:pk>/rows/",       BatchRowsView.as_view(),        name="batch-rows"),
+    path("suspicious/",                   SuspiciousRowsView.as_view(),   name="suspicious-rows"),
     path("summary/",                      DashboardSummaryView.as_view(), name="dashboard-summary"),
 ]
